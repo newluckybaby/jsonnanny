@@ -1,0 +1,6 @@
+[submodule "static/lib/raphael"]
+	path = static/lib/raphael
+	url = git://github.com/DmitryBaranovskiy/raphael.git
+[submodule "static/lib/underscore"]
+	path = static/lib/underscore
+	url = git://github.com/documentcloud/underscore.git

@@ -1,0 +1,17 @@
+/* image sprites {{{ */
+.global-nav .logo-jsonnanny {
+    background:transparent url(images/jsonnanny.png) no-repeat scroll 0 0;
+}
+/* }}} */
+/* globa nav {{{ */
+.global-nav .logo-jsonnanny {
+    display:block;
+    width:183px;
+    height:40px;
+    text-indent:-9999px;
+    overflow:hidden;
+}
+.global-nav .brand {
+    padding:0 20px;
+}
+/* }}} */
