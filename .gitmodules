@@ -4,3 +4,6 @@
 [submodule "static/lib/underscore"]
 	path = static/lib/underscore
 	url = git://github.com/documentcloud/underscore.git
+[submodule "static/lib/fontawesome"]
+	path = static/lib/fontawesome
+	url = git://github.com/FortAwesome/Font-Awesome.git
