@@ -9,9 +9,11 @@
     <![endif]-->
     <link rel="stylesheet" href="../static/lib/bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="../static/lib/fontawesome/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="../static/markdown.css" type="text/css">
     <link rel="stylesheet" href="../static/global.css" type="text/css">
 </head>
 <body>
+    <!-- global nav {{{ -->
     <div class="navbar navbar-static-top global-nav">
         <div class="navbar-inner">
             <div class="container">
@@ -19,6 +21,8 @@
                 <ul class="nav">
                     <li class="active"><a href="#">控制面板</a></li>
                     <li><a href="#schema">模式库</a></li>
+                    <li><a href="#schema">JSON库</a></li>
+                    <li><a href="#schema">游乐场</a></li>
                 </ul>
                 <div class="btn-group pull-right">
                     <button class="btn"><i class="icon-user"></i> 用户名</button>
@@ -26,31 +30,36 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">个人信息</a></li>
+                        <li><a href="#">密码设置</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">API密钥</a></li>
+                        <li><a href="#">权限设置</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">邮件订阅</a></li>
                     </ul>
                 </div>
                 <ul class="nav pull-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">帮助 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">JSON模式文档</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">JSON Nanny 入门教程</a></li>
+                            <li><a href="#">JSON Nanny API指南</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">关于 JSON Nanny</a></li>
                         </ul>
                     </li>
                 </ul>
                 <form class="navbar-search pull-right" action="">
-                    <input type="text" class="search-query span3" placeholder="模式名称/所有者">
+                    <input type="text" class="search-query span2" placeholder="模式名称/所有者">
                 </form>
             </div>
         </div>
     </div>
+    <!-- }}} -->
+    <!-- dashboard {{{ -->
     <div class="container" id="dashboard" hidden>
         <div class="row">
             <div class="span8">
@@ -151,6 +160,8 @@
             </div>
         </div>
     </div>
+    <!-- }}} -->
+    <!-- list {{{ -->
     <div class="container" id="list" hidden>
         <ul class="breadcrumb">
             <li><a href="#">模式库</a> <span class="divider">/</span></li>
@@ -208,12 +219,18 @@
             </ul>
         </div>
     </div>
-    <div class="container" id="detail">
+    <!-- }}} -->
+    <!-- detail {{{ -->
+    <div class="container" id="detail" hidden>
         <ul class="breadcrumb">
             <li><a href="#">模式库</a> <span class="divider">/</span></li>
             <li><a href="#">wuyu</a> <span class="divider">/</span></li>
             <li class="active">commonlist</li>
         </ul>
+        <div class="directory-meta">
+            <a href="#" class="history"><i class="icon-time"></i> 2046次提交记录</a>
+            <h3 class="current">/commonlist</h3>
+        </div>
         <div class="directory">
             <div class="alert alert-info status">添加P4P部分接口 <span>无语16小时前更新</span></div>
             <table class="table table-striped table-hover table-condensed">
@@ -240,16 +257,307 @@
                 </tr>
             </table>
         </div>
+        <div class="markdown">
+            <div class="markdown-body">
+                <h1><a name="%E7%94%A8%E4%BA%8E%E6%8F%8F%E8%BF%B0json%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84%E5%8F%8A%E5%90%AB%E4%B9%89%E7%9A%84json%E5%AA%92%E4%BD%93%E7%B1%BB%E5%9E%8B" class="anchor" href="#%E7%94%A8%E4%BA%8E%E6%8F%8F%E8%BF%B0json%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84%E5%8F%8A%E5%90%AB%E4%B9%89%E7%9A%84json%E5%AA%92%E4%BD%93%E7%B1%BB%E5%9E%8B"><span class="mini-icon mini-icon-link"></span></a>用于描述JSON文档结构及含义的JSON媒体类型</h1>
+                <h2> <a name="%E6%A6%82%E8%A6%81" class="anchor" href="#%E6%A6%82%E8%A6%81"><span class="mini-icon mini-icon-link"></span></a>概要</h2> 
+                <p>JSON(Javascript Object Notation) Schema 是对“application/schema+json”的定义，此文档类型以JSON数据格式为基础。从当前应用场景来看，JSON Schema所能做的主要是对数据形式以及操作方式进行约束，同时也包括对校验、文档、链接导航、访问控制的定义。</p>
+                <h2><a name="%E6%96%87%E6%A1%A3%E7%8A%B6%E6%80%81" class="anchor" href="#%E6%96%87%E6%A1%A3%E7%8A%B6%E6%80%81"><span class="mini-icon mini-icon-link"></span></a>文档状态</h2>
+                <p>此**互联网草案**以符合BCP 78与BCP 79规定的方式进行提交。</p>
+                <p>所谓**互联网草案**是指**互联网工程工作组**的工作文档，需要注意的是其他工作组也可以将此文档以**互联网草案**的形式分发。可访问<a href="http://datatracker.ietf.org/drafts/current/">http://datatracker.ietf.org/drafts/current/</a>查看当前已存在的**互联网草案**。</p>
+                <p>此文档失效时间为二零一一年五月二十六日。</p>
+                <h2><a name="%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E" class="anchor" href="#%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E"><span class="mini-icon mini-icon-link"></span></a>版权声明</h2> 
+                <p>Copyright (c) 2010 版权归互联网工程工作组以及作者所有。</p>
+                <p>在有效期内，此文档受BCP 78以及互联网工程工作组相关文档条例<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>保护。请仔细阅读以上条例内容中关于权利与约束条件内容。从此文档中提取的任何代码片段需要包含简化BSD许可证中章节4.e中的内容。</p>
+                <h2><a name="%E4%B8%80%E3%80%81%E4%BB%8B%E7%BB%8D" class="anchor" href="#%E4%B8%80%E3%80%81%E4%BB%8B%E7%BB%8D"><span class="mini-icon mini-icon-link"></span></a>一、介绍</h2> 
+                <p>JSON(Javascript Object Notation)Schema是对JSON类型数据结构的定义。从当前应用场景来看，JSON Schema所能做的主要是对数据形式以及操作方式进行约束，同时也包括对校验、文档、导航、访问控制的定义。</p>
+                <h2><a name="%E4%BA%8C%E3%80%81-%E7%BA%A6%E5%AE%9A" class="anchor" href="#%E4%BA%8C%E3%80%81-%E7%BA%A6%E5%AE%9A"><span class="mini-icon mini-icon-link"></span></a>二、 约定</h2> 
+                <p>在此文档中出现的“**必须**”，“**不允许**”，“**必需**”，“**应该**”，“**不应该**”，“**推荐**”，“**可能**”，“**可选**”等与RFC 2119[RFC2119]中的定义相一致。</p>
+                <h2><a name="%E4%B8%89%E3%80%81%E6%A6%82%E6%8B%AC" class="anchor" href="#%E4%B8%89%E3%80%81%E6%A6%82%E6%8B%AC"><span class="mini-icon mini-icon-link"></span></a>三、概括</h2>
+                <p>JSON Schema基于JSON，与通常我们所使用的JSON文档相比，它所定义的媒体类型"application/json+schema"通过设定约束值，描述资源以及表达多资源间的关系等方式来表现JSON文档结构。</p>
+                <p>JSON Schema由多个独立的规范组成。核心规范部分主要用于对JSON结构以及结构中元素的有效性进行阐述，而Hyper Schema部分则主要阐述的是结构中如何以某种类似超链接的元素来是如何表达多资源间的关系，从而使终端设备可以操控对多个JSON文档。</p>
+                <p>其他JSON Schema则是用于约束某种具体数据类型中属性值的元文档。</p>
+                <p>以描述某产品的JSON Schema为例:</p>
+<pre><code>{
+    "name":"Product",
+    "properties":{
+        "id":{
+            "type":"number",
+            "description":"Product identifier",
+            "required":true
+        },
+        "name":{
+            "description":"Name of the product",
+            "type":"string",
+            "required":true
+        },
+        "price":{
+            "required":true,
+            "type": "number",
+            "minimum":0,
+            "required":true
+        },
+        "tags":{
+            "type":"array",
+            "items":{
+                "type":"string"
+            }
+        }
+    },
+    "links":[
+        {
+            "rel":"full",
+            "href":"{id}"
+        },
+        {
+            "rel":"comments",
+            "href":"comments/?id={id}"
+        }
+    ]
+}
+</code></pre>
+            </div>
+        </div>
     </div>
-    <div class="container">
-        <h2>Editor</h2>
+    <!-- }}} -->
+    <!-- document {{{ -->
+    <div class="container" id="document" hidden>
+        <ul class="breadcrumb">
+            <li><a href="#">文档</a> <span class="divider">/</span></li>
+            <li><a href="#">规范</a> <span class="divider">/</span></li>
+            <li class="active">JSON Schema第三版草案</li>
+        </ul>
+        <div class="markdown">
+            <div class="markdown-body">
+                <h1><a name="%E7%94%A8%E4%BA%8E%E6%8F%8F%E8%BF%B0json%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84%E5%8F%8A%E5%90%AB%E4%B9%89%E7%9A%84json%E5%AA%92%E4%BD%93%E7%B1%BB%E5%9E%8B" class="anchor" href="#%E7%94%A8%E4%BA%8E%E6%8F%8F%E8%BF%B0json%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84%E5%8F%8A%E5%90%AB%E4%B9%89%E7%9A%84json%E5%AA%92%E4%BD%93%E7%B1%BB%E5%9E%8B"><span class="mini-icon mini-icon-link"></span></a>用于描述JSON文档结构及含义的JSON媒体类型</h1>
+                <h2> <a name="%E6%A6%82%E8%A6%81" class="anchor" href="#%E6%A6%82%E8%A6%81"><span class="mini-icon mini-icon-link"></span></a>概要</h2> 
+                <p>JSON(Javascript Object Notation) Schema 是对“application/schema+json”的定义，此文档类型以JSON数据格式为基础。从当前应用场景来看，JSON Schema所能做的主要是对数据形式以及操作方式进行约束，同时也包括对校验、文档、链接导航、访问控制的定义。</p>
+                <h2><a name="%E6%96%87%E6%A1%A3%E7%8A%B6%E6%80%81" class="anchor" href="#%E6%96%87%E6%A1%A3%E7%8A%B6%E6%80%81"><span class="mini-icon mini-icon-link"></span></a>文档状态</h2>
+                <p>此**互联网草案**以符合BCP 78与BCP 79规定的方式进行提交。</p>
+                <p>所谓**互联网草案**是指**互联网工程工作组**的工作文档，需要注意的是其他工作组也可以将此文档以**互联网草案**的形式分发。可访问<a href="http://datatracker.ietf.org/drafts/current/">http://datatracker.ietf.org/drafts/current/</a>查看当前已存在的**互联网草案**。</p>
+                <p>此文档失效时间为二零一一年五月二十六日。</p>
+                <h2><a name="%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E" class="anchor" href="#%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E"><span class="mini-icon mini-icon-link"></span></a>版权声明</h2> 
+                <p>Copyright (c) 2010 版权归互联网工程工作组以及作者所有。</p>
+                <p>在有效期内，此文档受BCP 78以及互联网工程工作组相关文档条例<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>保护。请仔细阅读以上条例内容中关于权利与约束条件内容。从此文档中提取的任何代码片段需要包含简化BSD许可证中章节4.e中的内容。</p>
+                <h2><a name="%E4%B8%80%E3%80%81%E4%BB%8B%E7%BB%8D" class="anchor" href="#%E4%B8%80%E3%80%81%E4%BB%8B%E7%BB%8D"><span class="mini-icon mini-icon-link"></span></a>一、介绍</h2> 
+                <p>JSON(Javascript Object Notation)Schema是对JSON类型数据结构的定义。从当前应用场景来看，JSON Schema所能做的主要是对数据形式以及操作方式进行约束，同时也包括对校验、文档、导航、访问控制的定义。</p>
+                <h2><a name="%E4%BA%8C%E3%80%81-%E7%BA%A6%E5%AE%9A" class="anchor" href="#%E4%BA%8C%E3%80%81-%E7%BA%A6%E5%AE%9A"><span class="mini-icon mini-icon-link"></span></a>二、 约定</h2> 
+                <p>在此文档中出现的“**必须**”，“**不允许**”，“**必需**”，“**应该**”，“**不应该**”，“**推荐**”，“**可能**”，“**可选**”等与RFC 2119[RFC2119]中的定义相一致。</p>
+                <h2><a name="%E4%B8%89%E3%80%81%E6%A6%82%E6%8B%AC" class="anchor" href="#%E4%B8%89%E3%80%81%E6%A6%82%E6%8B%AC"><span class="mini-icon mini-icon-link"></span></a>三、概括</h2>
+                <p>JSON Schema基于JSON，与通常我们所使用的JSON文档相比，它所定义的媒体类型"application/json+schema"通过设定约束值，描述资源以及表达多资源间的关系等方式来表现JSON文档结构。</p>
+                <p>JSON Schema由多个独立的规范组成。核心规范部分主要用于对JSON结构以及结构中元素的有效性进行阐述，而Hyper Schema部分则主要阐述的是结构中如何以某种类似超链接的元素来是如何表达多资源间的关系，从而使终端设备可以操控对多个JSON文档。</p>
+                <p>其他JSON Schema则是用于约束某种具体数据类型中属性值的元文档。</p>
+                <p>以描述某产品的JSON Schema为例:</p>
+<pre><code>{
+    "name":"Product",
+    "properties":{
+        "id":{
+            "type":"number",
+            "description":"Product identifier",
+            "required":true
+        },
+        "name":{
+            "description":"Name of the product",
+            "type":"string",
+            "required":true
+        },
+        "price":{
+            "required":true,
+            "type": "number",
+            "minimum":0,
+            "required":true
+        },
+        "tags":{
+            "type":"array",
+            "items":{
+                "type":"string"
+            }
+        }
+    },
+    "links":[
+        {
+            "rel":"full",
+            "href":"{id}"
+        },
+        {
+            "rel":"comments",
+            "href":"comments/?id={id}"
+        }
+    ]
+}
+</code></pre>
+            </div>
+        </div>
     </div>
-    <div class="container" id="document">
-        <h2>Documentation</h2>
+    <!-- }}} -->
+    <!-- profile {{{ -->
+    <div class="container" id="profile" hidden>
+        <div class="row">
+            <div class="span2">
+                <div class="well main-nav">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">个人信息</li>
+                        <li class="active"><a href="#">个人信息</a></li>
+                        <li><a href="#">密码设置</a></li>
+                        <li class="divider"></li>
+                        <li class="nav-header">开发选项</li>
+                        <li><a href="#">API密钥</a></li>
+                        <li><a href="#">权限设置</a></li>
+                        <li class="divider"></li>
+                        <li class="nav-header">隐私设置</li>
+                        <li><a href="#">邮件订阅</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="span10">
+                <div class="well main-entity">
+                    <div class="profile-setting">
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label">工号</label>
+                                <div class="controls">
+                                    <span class="input uneditable-input span1">024893</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">名称</label>
+                                <div class="controls">
+                                    <span class="input uneditable-input span1">无语</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="email">邮箱</label>
+                                <div class="controls">
+                                    <input type="text" id="email" placeholder="邮箱">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="gravatarmail">Gravatar</label>
+                                <div class="controls">
+                                    <input type="text" id="gravatarmail" placeholder="Gravatar">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">保存更改</button>
+                                <button type="button" class="btn">取消</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="well main-entity">
+                    <div class="profile-setting">
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for="oldpassword">原始密码</label>
+                                <div class="controls">
+                                    <input type="password" id="oldpassword">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="newpassword">新密码</label>
+                                <div class="controls">
+                                    <input type="password" id="newpassword">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">保存更改</button>
+                                <button type="button" class="btn">取消</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="well main-entity">
+                    <div class="api-setting">
+                        <div class="alert alert-error">
+                            <strong>注意!</strong> 请确保当时使用的密钥与邮箱保持一致.
+                        </div>
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for="apikey">API密钥</label>
+                                <div class="controls">
+                                    <input class="input-xlarge" id="apikey" type="text" disabled>
+                                    <button type="button" class="btn"><i class="icon-refresh"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="well main-entity">
+                    <div class="permission-setting">
+                        <form class="form-horizontal">
+                            <label class="checkbox">
+                                <input type="checkbox" name="view" checked> 允许任何人查看我的文档
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="modify" checked> 允许任何人修改我的文档
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="review"> 修改我的文档不需要我的确认
+                            </label>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">保存更改</button>
+                                <button type="button" class="btn">取消</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="well main-entity">
+                    <div class="delivery-setting">
+                        <form class="form-horizontal">
+                            <label class="checkbox">
+                                <input type="checkbox" name="system" checked disabled> 系统消息
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="modify" checked> 我的文档被修改
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="star"> 我的文档被人关注
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="follow"> 我被人关注
+                            </label>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">保存更改</button>
+                                <button type="button" class="btn">取消</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container" id="about">
-        <h2>About</h2>
+    <!-- }}} -->
+    <!-- userimport {{{ -->
+    <div id="userimport" class="modal" tabindex="-1" role="dialog" aria-labelledby="importmodal" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="importlabel">导入用户</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="user">用户</label>
+                    <div class="controls">
+                        <input type="text" id="user" placeholder="输入姓名/花名/工号">
+                    </div>
+                </div>
+            </form>
+            <div class="carousel slide">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="active item well">
+                    </div>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left">&lsaquo;</a>
+                <a class="carousel-control right">&rsaquo;</a>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary">下一步 &raquo;</button>
+        </div>
     </div>
+    <!-- }}} -->
 <script type="text/javascript" src="../static/lib/jquery/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../static/lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
