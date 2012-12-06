@@ -15,9 +15,127 @@
 </head>
 <body>
     <!-- global nav {{{ -->
-    <div class="navbar navbar-static-top global-nav">
+    <div class="navbar navbar-static-top global-nav editor-menu">
         <div class="navbar-inner">
-            <a class="brand" href="#"><span class="logo-jsonnanny">JSONNanny</span></a>
+            <span class="brand"><span class="logo-jsonnanny">JSONNanny</span></span>
+            <div class="btn-group pull-right">
+                <button class="btn"><i class="icon-user"></i> 用户名</button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">个人信息</a></li>
+                    <li><a href="#">密码设置</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">API密钥</a></li>
+                    <li><a href="#">权限设置</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">邮件订阅</a></li>
+                </ul>
+            </div>
+            <ul class="nav pull-left">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">文件 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">保存</a></li>
+                        <li><a href="#">发布 <span class="label label-success">v0.2</span> &raquo; <span class="label label-important">v0.3</span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">导出为文件</a></li>
+                        <li><a href="#">从文件导入</a></li>
+                        <li><a href="#">指定版本导入</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">文件信息</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav pull-left">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">编辑 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">撤销</a></li>
+                        <li><a href="#">重做</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">从历史操作恢复</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav pull-left">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">视图 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">结构视图 <i class="icon-ok"></i></a></li>
+                        <li><a href="#">树形视图</a></li>
+                        <li><a href="#">源代码</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">显示栅格</a></li>
+                        <li><a href="#">显示行数</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav pull-left">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">JSON格式化</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">查看日志 <span class="badge badge-info">8</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav pull-left">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">帮助 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">JSON模式文档</a></li>
+                        <li><a href="#">JSON Nanny 入门教程</a></li>
+                        <li><a href="#">JSON Nanny API指南</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">关于编辑器</a></li>
+                        <li><a href="#">关于 JSON Nanny</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav pull-left">
+                <li><a href="#">全局设置</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- }}} -->
+    <!-- entity {{{ -->
+    <div class="editor-entity">
+        <div class="navbar editor-tools">
+            <div class="navbar-inner-original clearfix entity">
+                <div class="pull-left">
+                    <span class="label">简单类型</span>
+                    <div class="btn-group">
+                        <button type="button" class="btn">S</button>
+                        <button type="button" class="btn">9</button>
+                        <button type="button" class="btn">{ }</button>
+                        <button type="button" class="btn">[ ]</button>
+                        <button type="button" class="btn">N</button>
+                        <button type="button" class="btn">A</button>
+                        <button type="button" class="btn">B</button>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <span class="label">扩展类型</span>
+                    <div class="btn-group">
+                        <button type="button" class="btn">#</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid main-layout">
+            <div class="row-fluid">
+                <div class="span10">
+                    main entity
+                </div>
+                <div class="span2">
+                    <div class="well">
+                        attr
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- }}} -->

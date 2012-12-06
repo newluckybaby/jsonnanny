@@ -1,2 +1,43 @@
 /* menu {{{ */
+.editor-menu .nav {
+    margin:0;
+}
+.editor-menu .nav > li > a {
+    padding:10px;
+}
+.editor-menu .nav > li > .dropdown-menu:before,
+.editor-menu .nav > li > .dropdown-menu:after {
+    display:none;
+}
+/* }}} */
+/* entity {{{ */
+.editor-entity {
+    position:relative;
+}
+.editor-entity .main-layout {
+    padding-left:5px;
+    padding-right:2px;
+}
+/* }}} */
+/* tools {{{ */
+.editor-tools {
+    color:#333;
+    margin-bottom:2px;
+}
+.editor-tools .entity {
+    padding-left:20px;
+}
+.editor-tools .btn-group {
+    margin-top:0;
+    margin-right:15px;
+}
+.editor-tools .btn:last-child,
+.editor-tools .btn:first-child {
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+}
+.editor-tools .btn {
+    border-width:0 1px;
+}
 /* }}} */
