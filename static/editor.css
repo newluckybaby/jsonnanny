@@ -25,7 +25,7 @@
     margin-bottom:2px;
 }
 .editor-tools .entity {
-    padding-left:20px;
+    padding-left:5px;
 }
 .editor-tools .btn-group {
     margin-top:0;
@@ -39,5 +39,72 @@
 }
 .editor-tools .btn {
     border-width:0 1px;
+}
+/* }}} */
+/* structure-view {{{ */
+.structure-view .entity {
+    margin-left:2px;
+    margin-right:246px;
+}
+.structure-view .main {
+    border:1px solid #ddd;
+    min-height:599px;
+}
+.structure-view .grid {
+    background:transparent url(images/grid.png) repeat scroll 0 0;
+}
+/* }}} */
+/* dock {{{ */
+.dock-item {
+    margin-right:2px;
+    width:240px;
+    border:1px solid #ddd;
+}
+.dock-item .hd {
+    padding-left:10px;
+    height:30px;
+    /*border-bottom:1px solid #e3e3e3;*/
+    background-color:#f5f5f5;
+}
+.dock-item h5 {
+    margin:0;
+    line-height:30px;
+}
+.dock-item .bd {
+    background-color:#fff;
+}
+.dock-attribute .table {
+    margin-bottom:0;
+}
+.dock-attribute .table td {
+    vertical-align:middle;
+    font-size:12px;
+}
+.dock-attribute tr td:first-child {
+    border-right:1px solid #ddd;
+}
+.dock-attribute select,
+.dock-attribute input {
+    margin-bottom:0;
+    width:100%; 
+    font-size:12px;
+}
+.dock-attribute input {
+    height:16px;
+    line-height:16px;
+    padding:4px 0;
+}
+.dock-attribute select {
+    height:26px;
+    line-height:26px;
+}
+/* }}} */
+/* view-switch {{{ */
+.view-switch {
+    margin-top:-1px;
+}
+.view-switch .nav-tabs > li > a {
+    padding:2px 5px;
+    font-size:12px;
 }
 /* }}} */

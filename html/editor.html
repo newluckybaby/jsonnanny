@@ -63,9 +63,11 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">视图 <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">结构视图 <i class="icon-ok"></i></a></li>
-                        <li><a href="#">树形视图</a></li>
-                        <li><a href="#">源代码</a></li>
+                        <li><a href="#">逻辑视图 <i class="icon-ok"></i></a></li>
+                        <li><a href="#">物理视图</a></li>
+                        <li><a href="#">文本视图</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">属性编辑器</a></li>
                         <li class="divider"></li>
                         <li><a href="#">显示栅格</a></li>
                         <li><a href="#">显示行数</a></li>
@@ -108,32 +110,64 @@
                 <div class="pull-left">
                     <span class="label">简单类型</span>
                     <div class="btn-group">
-                        <button type="button" class="btn">S</button>
-                        <button type="button" class="btn">9</button>
-                        <button type="button" class="btn">{ }</button>
-                        <button type="button" class="btn">[ ]</button>
-                        <button type="button" class="btn">N</button>
-                        <button type="button" class="btn">A</button>
-                        <button type="button" class="btn">B</button>
+                        <button type="button" class="btn">String</button>
+                        <button type="button" class="btn">Number</button>
+                        <button type="button" class="btn">Boolean</button>
+                        <button type="button" class="btn">Object</button>
+                        <button type="button" class="btn">Array</button>
+                        <button type="button" class="btn">Null</button>
+                        <button type="button" class="btn">Any</button>
                     </div>
                 </div>
                 <div class="pull-left">
                     <span class="label">扩展类型</span>
                     <div class="btn-group">
-                        <button type="button" class="btn">#</button>
+                        <button type="button" class="btn">ID</button>
+                        <button type="button" class="btn">Link</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid main-layout">
-            <div class="row-fluid">
-                <div class="span10">
-                    main entity
-                </div>
-                <div class="span2">
-                    <div class="well">
-                        attr
+        <div class="structure-view">
+            <div class="dock pull-right">
+                <div class="dock-item dock-attribute">
+                    <div class="hd">
+                        <h5>属性</h5>
                     </div>
+                    <div class="bd">
+                        <table class="table table-condensed">
+                            <colgroup>
+                                <col class="col-key" />
+                                <col class="col-value" />
+                            </colgroup>
+                            <tr>
+                                <td>type</td>
+                                <td>
+                                    <select name="some_name">
+                                        <option value="object">Object</option>
+                                        <option value="object">String</option>
+                                        <option value="object">Boolean</option>
+                                        <option value="object">Array</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>enum</td>
+                                <td><input type="text" name="some_name" value="" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="entity">
+                <div class="main grid">
+                </div>
+                <div class="tabs-below view-switch">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#">逻辑视图</a></li>
+                        <li><a href="#">物理视图</a></li>
+                        <li><a href="#">文本视图</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
