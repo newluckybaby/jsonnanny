@@ -8,8 +8,6 @@ urls = [
 
     (r'/user.json',API.UserHandler),
     (r'/user.json/(.*)',API.UserHandler),
-    (r'/auth.json',API.AuthHandler),
-    (r'/auth.json/(.*)',API.AuthHandler),
     (r'/schema.json',API.SchemaHandler),
     (r'/schema.json/(.*)',API.SchemaHandler),
     (r'/case.json',API.CaseHandler),

@@ -1,34 +1,43 @@
 # -*- coding: utf-8 -*-
 
-import tornado.escape
-
 from apis import BaseModel
 
 class UserModel(BaseModel):
-    def __init__(self):
-        pass
     def get_profile(self, **kwargs):
-        uid = kwargs.get('uid', None)
-        user = kwargs.get('user', None)
+        username = kwargs.get('username', None)
+        api_key = kwargs.get('api_key', None)
 
-        if uid is not None:
-            ret = self.db.get('SELECT id,tag,nick,cjknick,email,gravatar,date FROM users WHERE id = %s', uid)
-        elif user is not None:
-            ret = self.db.get('SELECT id,tag,nick,cjknick,email,gravatar,date FROM users WHERE nick = %s', user)
+        if username is not None:
+            ret = self.db.get('SELECT id,tag,nick,cjknick,email,gravatar,date FROM users WHERE nick = %s', username)
+        elif api_key is not None:
+            ret = self.db.get('SELECT id,tag,nick,cjknick,email,gravatar,date FROM users WHERE apikey = %s', api_key)
         else:
-            ret = {}
+            ret = None 
         
-        if ret.has_key('date'):
+        if ret and ret.has_key('date'):
             ret.update({
                 'date' : str(ret['date'])
             })
 
-        print tornado.escape.native_str(ret['cjknick'])
-
-        #if ret.has_key('cjknick'):
-            #ret.update({
-                #'cjknick' : tornado.escape.native_str(ret['cjknick'])
-            #})
-
         return ret
+    
+    def patch_profile(self, **kwargs):
+        username = kwargs.get('username', None)
+        api_key = kwargs.get('api_key', None)
+        white_list = ('gravatar')
+        update_data = []
 
+        if self.get_profile(**kwargs) is None:
+            return None
+
+        for k, v in kwargs.get('payload').iteritems():
+            if k in white_list:
+                update_data.append(k + '=\'' + v + '\'')
+
+        if len(update_data) != 0:
+            if username is not None:
+                self.db.execute('UPDATE users SET ' + ','.join(update_data) + ' WHERE nick = %s', username)
+            elif api_key is not None:
+                self.db.execute('UPDATE users SET ' + ','.join(update_data) + ' WHERE apikey = %s', api_key)
+            
+        return self.get_profile(**kwargs)
