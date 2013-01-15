@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
 
-import torndb
-import config
+import os
 
-class Schema(object):
-    def __init__(self):
+from dulwich.repo import Repo
+from apis import BaseModel
+
+class SchemaModel(BaseModel):
+    def get_schemas(self, **kwargs):
+        pass
+
+    def get_schema(self, **kwargs):
+        pass
+
+    def create_schema(self, **kwargs):
         pass

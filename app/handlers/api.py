@@ -9,15 +9,14 @@ from tornado.web import RequestHandler, HTTPError
 
 from apis.authorize import AuthorizeModel
 from apis.user import UserModel
+from apis.schema import SchemaModel
 
 class APIHandler(RequestHandler):
     def authorize(self):
         api_key = self.get_argument('apikey', None)
-        user = self.get_argument('user', None)
-        password = self.get_argument('password', None)
 
-        is_invalid = AuthorizeModel().auth_user_api(api_key = api_key) if api_key is not None else \
-                    AuthorizeModel().auth_user_pwd(user = user, password = password)
+        is_invalid = AuthorizeModel().auth_user_api(api_key = api_key) if api_key is not None else False
+
         if is_invalid:
             raise HTTPError(401)
 
@@ -37,10 +36,7 @@ class APIHandler(RequestHandler):
         self.finish(err)
 
     def get_payload(self):
-        try:
-            ret = tornado.escape.json_decode(self.request.body)
-        except:
-            ret = {}
+        ret = tornado.escape.json_decode(self.request.body) if self.request.body else {}
 
         return ret 
 
@@ -68,8 +64,16 @@ class UserHandler(APIHandler):
             raise HTTPError(404)
 
 class SchemaHandler(APIHandler):
-    def get(self):
-        self.write('hello jsonnanny!')
+    def post(self, sid = None):
+        super(SchemaHandler, self).authorize()
+
+        if sid is not None:
+            return self.get(sid)
+
+        response = SchemaModel().create_schema(payload = self.get_payload(), api_key = self.get_argument('apikey', None))
+
+    def get(self, sid = None):
+        raise HTTPError(404)
 
 class CaseHandler(RequestHandler):
     def get(self):
